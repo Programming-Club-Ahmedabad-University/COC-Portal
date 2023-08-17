@@ -2,14 +2,13 @@ import express, { Request, Response } from "express";
 
 const app = express();
 const port = process.env.PORT || 3000;
-
+console.log(port);
 // define a route handler for the default home page
 app.get("/", (req: Request, res: Response) => {
 	res.send("Hello world!");
 });
 app.use((err: Error, req: Request, res: Response, next: any): any => {
-	console.error(err.stack);
-	res.status(500).send("Something broke!");
+	res.status(500).send(err.stack);
 });
 // start the Express server
 app.listen(port, () => {
