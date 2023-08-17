@@ -54,4 +54,4 @@ jobs:
                   app-name: "Coc-portal"
                   slot-name: "Production"
                   publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D3BDD162BE064087B1C6A6DEB23CC4AA }}
-                  package: ./server/build
+                  package: ./server
