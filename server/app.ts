@@ -14,3 +14,5 @@ app.use((err: Error, req: Request, res: Response, next: any): any => {
 app.listen(port, () => {
 	console.log(`server started at http://localhost:${port}`);
 });
+
+export default app;
