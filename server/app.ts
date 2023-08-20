@@ -6,7 +6,7 @@ var app = express();
 // view engine setup
 
 app.use("/", function (req: Request, res: Response, next) {
-	return res.send("Hey There!");
+	return res.send("Hey zip!");
 });
 
 export default app;
