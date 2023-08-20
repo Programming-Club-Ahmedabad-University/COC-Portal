@@ -1,7 +1,15 @@
 import fs from "fs";
 import dotenv from "dotenv";
 import path from "path";
-const requiredEnvVariables = ["REDIS_PASS", "REDIS_HOST"];
+import { RedisClientType } from "redis";
+import crypto from "crypto";
+import fetch from "cross-fetch";
+const requiredEnvVariables = [
+	"REDIS_PASS",
+	"REDIS_HOST",
+	"CF_SECRET",
+	"CF_API_KEY",
+];
 export function loadEnvVariables(dirname: string): void {
 	try {
 		const envFilePath = path.resolve(dirname, ".env");
@@ -41,4 +49,29 @@ export function normalizePort(val: string) {
 	}
 
 	return false;
+}
+
+export async function updateLeaderboard(
+	redisClient: RedisClientType,
+	contestId: number
+) {
+	const curr_time = Math.floor(new Date().getTime() / 1000);
+	const apiKey = process.env.CF_API_KEY;
+	const secret = process.env.CF_SECRET;
+	if (!apiKey || !secret) {
+		throw new Error("API key or secret is missing");
+	}
+
+	const signature = crypto
+		.createHash("sha512")
+		.update(
+			`123456/contest.standings?apiKey=${apiKey}&contestId=${contestId}&time=${curr_time}#${secret}`
+		)
+		.digest("hex");
+
+	const requestUrl = `https://codeforces.com/api/contest.standings?contestId=${contestId}&apiKey=${apiKey}&time=${curr_time}&apiSig=123456${signature}`;
+
+	const resp = await fetch(requestUrl);
+	const data = await resp.json();
+	await redisClient.set("leaderboard", JSON.stringify(data));
 }
