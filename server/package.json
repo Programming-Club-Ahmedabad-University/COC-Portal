@@ -3,7 +3,7 @@
 	"version": "0.0.0",
 	"private": true,
 	"scripts": {
-		"start": "unzip  ./node_modules.zip && cd build && node ./server.js",
+		"start": "./startup && cd build && node ./server.js",
 		"build": "tsc -p .",
 		"dev": "nodemon  app.ts "
 	},
