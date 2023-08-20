@@ -3,13 +3,20 @@ import dotenv from "dotenv";
 
 const requiredEnvVariables = ["REDIS_PASS", "REDIS_HOST"];
 export function loadEnvVariables(envFilePath: string): void {
-	const envContent = fs.readFileSync(envFilePath, "utf-8");
-	const envConfig = dotenv.parse(envContent);
-	for (const key in envConfig) {
-		if (Object.prototype.hasOwnProperty.call(envConfig, key)) {
-			process.env[key] = envConfig[key];
+	try {
+		const envContent = fs.readFileSync(envFilePath, "utf-8");
+		const envConfig = dotenv.parse(envContent);
+		for (const key in envConfig) {
+			if (Object.prototype.hasOwnProperty.call(envConfig, key)) {
+				process.env[key] = envConfig[key];
+			}
 		}
+	} catch (error) {
+		console.warn(
+			"No .env file found, using the environment variables from the system"
+		);
 	}
+
 	for (let envVar of requiredEnvVariables) {
 		if (!process.env[envVar]) {
 			throw new Error(
