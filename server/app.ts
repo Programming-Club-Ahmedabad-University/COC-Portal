@@ -33,7 +33,8 @@ function webSocketHandler(ws: WebSocket) {
 		clearInterval(interval);
 	});
 }
-setInterval(() => updateLeaderboard(redisClient as any, 468732), 10000);
+
+setInterval(() => updateLeaderboard(redisClient as any, 468732), 1000);
 export default app;
 
 export { webSocketHandler };
