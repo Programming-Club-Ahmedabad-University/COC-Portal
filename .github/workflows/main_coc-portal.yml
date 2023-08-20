@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - Coc-portal
+name: Build and deploy Node.js app to Azure Web App - coc-portal
 
 on:
     push:
@@ -11,7 +11,7 @@ on:
 
 jobs:
     build:
-        runs-on: windows-latest
+        runs-on: ubuntu-latest
 
         steps:
             - uses: actions/checkout@v2
@@ -19,14 +19,16 @@ jobs:
             - name: Set up Node.js version
               uses: actions/setup-node@v1
               with:
-                  node-version: "18.x"
+                  node-version: "16.x"
 
             - name: npm install, build, and test
               run: |
-                  cd server
+                  cd server 
                   npm install
                   npm run build --if-present
                   npm run test --if-present
+                  zip -r node_modules.zip ./node_modules
+                  rm -rf node_modules
 
             - name: Upload artifact for deployment job
               uses: actions/upload-artifact@v2
@@ -48,10 +50,10 @@ jobs:
                   name: node-app
 
             - name: "Deploy to Azure Web App"
-              uses: azure/webapps-deploy@v2
               id: deploy-to-webapp
+              uses: azure/webapps-deploy@v2
               with:
-                  app-name: "Coc-portal"
+                  app-name: "coc-portal"
                   slot-name: "Production"
-                  publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D3BDD162BE064087B1C6A6DEB23CC4AA }}
-                  package: ./server/build
+                  publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_29B53F650C924E638AE29008F216D872 }}
+                  package: ./server
