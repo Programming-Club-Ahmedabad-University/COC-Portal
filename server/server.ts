@@ -107,5 +107,5 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-// const wss = new WebSocket.Server({ server });
-// wss.on("connection", webSocketHandler);
+const wss = new WebSocket.Server({ server });
+wss.on("connection", webSocketHandler);
