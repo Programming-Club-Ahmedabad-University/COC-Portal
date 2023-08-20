@@ -1,12 +1,20 @@
+import { loadEnvVariables } from "./util/functions";
+import path from "path";
+const envFilePath = path.resolve(__dirname, ".env");
+loadEnvVariables(envFilePath);
+// keep the above imports always at the top they are used to load the environment variables
+
 import express from "express";
 import { Request, Response } from "express";
 import WebSocket from "ws";
+import redisClient from "./util/redis";
+
 var app = express();
 
-// view engine setup
+app.use("/", async function (req: Request, res: Response, next) {
+	const count = await redisClient.incr("count");
 
-app.use("/", function (req: Request, res: Response, next) {
-	return res.send("Hey zip!");
+	return res.send(count.toString());
 });
 
 function webSocketHandler(ws: WebSocket) {
