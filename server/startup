@@ -1,14 +1,6 @@
 #!/bin/bash
 
 # Check if the node_modules folder exists
-if [ ! -d "node_modules" ]; then
-    echo "node_modules folder does not exist. Unzipping and creating..."
-    
-    # Unzip the node_modules.zip file
-    unzip ./node_modules.zip
+unzip ./node_modules.zip
     
     
-    echo "node_modules folder created."
-else
-    echo "node_modules folder already exists."
-fi
