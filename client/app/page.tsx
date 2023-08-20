@@ -5,8 +5,8 @@ import SignInButton from "./components/SignInButton";
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className="text-9xl">
-        45
+      <div className="text-xl">
+        Sign in here
         <SignInButton />
       </div>
     </main>
