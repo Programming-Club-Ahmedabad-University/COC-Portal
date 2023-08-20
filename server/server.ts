@@ -46,6 +46,13 @@ var server = http.createServer(app);
 server.listen(port);
 server.on("error", onError);
 server.on("listening", onListening);
+app.use(logger("dev"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, "public")));
+const wss = new WebSocket.Server({ server });
+wss.on("connection", webSocketHandler);
 
 /**
  * Normalize a port into a number, string, or false.
@@ -102,10 +109,3 @@ function onListening() {
 	var bind = typeof addr === "string" ? "pipe " + addr : "port " + addr!.port;
 	console.log("Listening on " + bind);
 }
-app.use(logger("dev"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
-const wss = new WebSocket.Server({ server });
-wss.on("connection", webSocketHandler);
