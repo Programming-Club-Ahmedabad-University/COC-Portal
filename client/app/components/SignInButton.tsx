@@ -11,7 +11,7 @@ function SignInButton() {
   if (session && session.user) {
     return (
       <>
-        <p className="text-sky-600">
+        <p className="text-sm">
           {session.user.name} ({session.user.email})
         </p>
 
