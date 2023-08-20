@@ -16,8 +16,8 @@ function webSocketHandler(ws: WebSocket) {
 	let i = 0;
 	let interval = setInterval(() => {
 		ws.send(i);
-		i++;
-	}, 1000);
+		i += 10;
+	}, 10000);
 
 	ws.send("something");
 	ws.on("close", function () {
