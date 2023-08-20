@@ -1,6 +1,4 @@
-import { loadEnvVariables } from "./util/functions";
-import { updateLeaderboard } from "./util/functions";
-
+import { loadEnvVariables, updateLeaderboard } from "./util/functions";
 loadEnvVariables(__dirname);
 // keep the above imports always at the top they are used to load the environment variables
 
@@ -10,7 +8,6 @@ import WebSocket from "ws";
 import redisClient from "./util/redis";
 
 var app = express();
-
 app.use("/", async function (req: Request, res: Response, next) {
 	const count = await redisClient.incr("count");
 
@@ -18,14 +15,17 @@ app.use("/", async function (req: Request, res: Response, next) {
 });
 
 function webSocketHandler(ws: WebSocket) {
-	ws.on("message", function (message: string) {
-		console.log("received: %s", message);
-	});
-	let i = 0;
-	let interval = setInterval(() => {
-		ws.send(i);
-		i += 10;
-	}, 10000);
+	let interval = setInterval(async () => {
+		const leaderboard = await redisClient.get("leaderboard");
+		if (!leaderboard)
+			return ws.send(
+				JSON.stringify({
+					leaderboard: [],
+				})
+			);
+
+		ws.send(leaderboard);
+	}, 1000);
 
 	ws.send("something");
 	ws.on("close", function () {
@@ -33,8 +33,6 @@ function webSocketHandler(ws: WebSocket) {
 		clearInterval(interval);
 	});
 }
-
-setInterval(() => updateLeaderboard(redisClient as any, 468732));
-
+setInterval(() => updateLeaderboard(redisClient as any, 468732), 10000);
 export default app;
-export { webSocketHandler };
+export { webSocketHandler};
