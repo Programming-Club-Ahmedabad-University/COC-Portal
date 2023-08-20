@@ -1,4 +1,5 @@
-Link: https://coc-portal.vercel.app/
+FrontEnd Link: https://coc-portal.vercel.app/
+BackEnd Link: https://coc-portal.azurewebsites.net/
 
 # COC-Portal
 

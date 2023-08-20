@@ -7,9 +7,9 @@ import { NextFunction, Request, Response } from "express";
 import createError from "http-errors";
 import express from "express";
 import WebSocket from "ws";
-
-// catch 404 and forward to error handler
+import { normalizePort } from "./util/functions";
 app.set("view engine", "ejs");
+// catch 404 and forward to error handler
 app.use(function (req: Request, res: Response, next) {
 	next(createError(404));
 });
@@ -38,6 +38,7 @@ app.set("port", port);
  */
 
 var server = http.createServer(app);
+// Specify the path to your .env file
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -57,22 +58,6 @@ wss.on("connection", webSocketHandler);
 /**
  * Normalize a port into a number, string, or false.
  */
-
-function normalizePort(val: string) {
-	var port = parseInt(val, 10);
-
-	if (isNaN(port)) {
-		// named pipe
-		return val;
-	}
-
-	if (port >= 0) {
-		// port number
-		return port;
-	}
-
-	return false;
-}
 
 /**
  * Event listener for HTTP server "error" event.
