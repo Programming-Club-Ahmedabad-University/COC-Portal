@@ -1,6 +1,8 @@
 import fs from "fs";
 import dotenv from "dotenv";
 import path from "path";
+import { RedisClientType } from "redis";
+
 const requiredEnvVariables = ["REDIS_PASS", "REDIS_HOST"];
 export function loadEnvVariables(dirname: string): void {
 	try {
@@ -41,4 +43,10 @@ export function normalizePort(val: string) {
 	}
 
 	return false;
+}
+
+export async function updateLeaderboard(redisClient: RedisClientType) {
+	// fetch the json data from the codeforces api
+	const data = {}; // fetched data
+	await redisClient.set("leaderboard", JSON.stringify(data));
 }
