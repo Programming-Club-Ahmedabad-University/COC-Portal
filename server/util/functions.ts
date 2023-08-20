@@ -1,9 +1,10 @@
 import fs from "fs";
 import dotenv from "dotenv";
-
+import path from "path";
 const requiredEnvVariables = ["REDIS_PASS", "REDIS_HOST"];
-export function loadEnvVariables(envFilePath: string): void {
+export function loadEnvVariables(dirname: string): void {
 	try {
+		const envFilePath = path.resolve(dirname, ".env");
 		const envContent = fs.readFileSync(envFilePath, "utf-8");
 		const envConfig = dotenv.parse(envContent);
 		for (const key in envConfig) {
@@ -12,7 +13,7 @@ export function loadEnvVariables(envFilePath: string): void {
 			}
 		}
 	} catch (error) {
-		console.warn(
+		console.log(
 			"No .env file found, using the environment variables from the system"
 		);
 	}

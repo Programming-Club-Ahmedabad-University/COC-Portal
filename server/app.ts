@@ -1,7 +1,6 @@
 import { loadEnvVariables } from "./util/functions";
-import path from "path";
-const envFilePath = path.resolve(__dirname, ".env");
-loadEnvVariables(envFilePath);
+
+loadEnvVariables(__dirname);
 // keep the above imports always at the top they are used to load the environment variables
 
 import express from "express";
