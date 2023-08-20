@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Check if the node_modules folder exists
+unzip ./node_modules.zip
+    
+    
