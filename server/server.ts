@@ -1,11 +1,12 @@
-import app from "./app";
+import app, { webSocketHandler } from "./app";
 import path from "path";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
 import http from "http";
-import e, { NextFunction, Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import createError from "http-errors";
 import express from "express";
+import WebSocket from "ws";
 
 // catch 404 and forward to error handler
 app.set("view engine", "ejs");
@@ -106,3 +107,5 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+const wss = new WebSocket.Server({ server });
+wss.on("connection", webSocketHandler);

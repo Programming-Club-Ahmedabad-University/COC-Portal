@@ -5,11 +5,12 @@
 	"scripts": {
 		"start": "./startup && cd build && node ./server.js",
 		"build": "tsc -p .",
-		"dev": "nodemon  app.ts "
+		"dev": "nodemon  server.ts "
 	},
 	"devDependencies": {
 		"@types/cookie-parser": "^1.4.3",
 		"@types/morgan": "^1.9.4",
+		"@types/ws": "^8.5.5",
 		"ts-node": "^10.9.1"
 	},
 	"dependencies": {
@@ -18,6 +19,7 @@
 		"express": "^4.18.2",
 		"morgan": "^1.10.0",
 		"nodemon": "^3.0.1",
-		"typescript": "^5.1.6"
+		"typescript": "^5.1.6",
+		"ws": "^8.13.0"
 	}
 }
