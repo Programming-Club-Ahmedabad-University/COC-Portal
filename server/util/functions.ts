@@ -1,6 +1,9 @@
 import fs from "fs";
 import dotenv from "dotenv";
 import path from "path";
+import { RedisClientType } from "redis";
+import crypto from 'crypto';
+
 const requiredEnvVariables = ["REDIS_PASS", "REDIS_HOST"];
 export function loadEnvVariables(dirname: string): void {
 	try {
@@ -41,4 +44,18 @@ export function normalizePort(val: string) {
 	}
 
 	return false;
+}
+
+export async function updateLeaderboard(redisClient: RedisClientType, contestId: number) {
+	const curr_time = Math.floor(new Date().getTime()/1000);
+	const apiKey = process.env.CF_API_KEY
+	const secret = process.env.CF_SECRET
+
+	const signature = crypto.createHash('sha512').update(`123456/contest.standings?apiKey=${apiKey}&contestId=${contestId}&time=${curr_time}#${secret}`).digest('hex');
+
+	const requestUrl = `https://codeforces.com/api/contest.standings?contestId=${contestId}&apiKey=${apiKey}&time=${curr_time}&apiSig=123456${signature}`;
+
+	const resp = await fetch(requestUrl);
+	const data = await resp.json();
+	await redisClient.set("leaderboard", JSON.stringify(data));
 }

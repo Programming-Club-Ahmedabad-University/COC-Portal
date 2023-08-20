@@ -1,4 +1,5 @@
 import { loadEnvVariables } from "./util/functions";
+import { updateLeaderboard } from "./util/functions";
 
 loadEnvVariables(__dirname);
 // keep the above imports always at the top they are used to load the environment variables
@@ -32,5 +33,8 @@ function webSocketHandler(ws: WebSocket) {
 		clearInterval(interval);
 	});
 }
+
+setInterval(() => updateLeaderboard(redisClient as any, 468732));
+
 export default app;
 export { webSocketHandler };
