@@ -1,4 +1,4 @@
-import styles from "./page.module.css";
+import styles from "./index.module.css";
 import { Button } from "@nextui-org/button";
 import SignInButton from "./components/SignInButton/SignInButton";
 
