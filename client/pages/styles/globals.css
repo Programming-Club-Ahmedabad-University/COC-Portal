@@ -2,11 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Clash fonts";
+  src: url("/fonts/Clash-Regular.ttf") format("truetype");
+  /* add additional font formats here if needed */
+}
+
 html,
 body,
 #__next {
   height: 100%;
   background-color: black;
+  font-family: "Clash fonts", sans-serif; /* use the custom font */
 }
 
 body {
