@@ -22,7 +22,7 @@ export default function Dashboard() {
               color="primary"
               onClick={() =>
                 signOut({
-                  callbackUrl: "http://localhost:3000/",
+                  callbackUrl: "/",
                 })
               }
             >
