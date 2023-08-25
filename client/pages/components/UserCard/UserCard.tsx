@@ -6,8 +6,10 @@ import {
   CardBody,
   CardFooter,
   CardHeader,
+  Button,
 } from "@nextui-org/react";
 import { DefaultSession } from "next-auth";
+import { signOut } from "next-auth/react";
 import React from "react";
 
 function UserCard({ user }: { user: DefaultSession["user"] }) {
@@ -31,12 +33,23 @@ function UserCard({ user }: { user: DefaultSession["user"] }) {
             </div>
           </div>
         </CardHeader>
-        <CardBody className="px-3 py-0 text-small text-default-400">
+        <CardBody className="px-3 py-0 text-medium text-default-400">
           <p className="flex justify-center mt-1">
             Haalo Clash of Codes Ramva!
           </p>
         </CardBody>
-        <CardFooter className="gap-3"></CardFooter>
+        <CardFooter className="gap-3 flex justify-center">
+          <Button
+            color="primary"
+            onClick={() =>
+              signOut({
+                callbackUrl: "/",
+              })
+            }
+          >
+            Sign out
+          </Button>
+        </CardFooter>
       </Card>
     </div>
   );

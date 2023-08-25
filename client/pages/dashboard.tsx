@@ -3,6 +3,7 @@ import UserCard from "./components/UserCard/UserCard";
 import { Button } from "@nextui-org/react";
 import style from "./styles/Dashboard.module.css";
 import Layout from "./Layout";
+import ScoreBoard from "./components/ScoreBoard/ScoreBoard";
 
 export default function Dashboard() {
   const { data: session } = useSession();
@@ -17,17 +18,9 @@ export default function Dashboard() {
             <UserCard user={session?.user} />
           </div>
 
+          {/* leaderboard table here */}
           <div>
-            <Button
-              color="primary"
-              onClick={() =>
-                signOut({
-                  callbackUrl: "/",
-                })
-              }
-            >
-              Sign out
-            </Button>
+            <ScoreBoard />
           </div>
         </div>
       </Layout>
