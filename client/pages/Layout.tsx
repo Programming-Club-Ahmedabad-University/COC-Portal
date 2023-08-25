@@ -1,7 +1,9 @@
 // import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import style from "./styles/Layout.module.css";
 
+// for the fonts:
+import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -15,8 +17,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning={true}>
-      <body>{children}</body>
-    </html>
+    <>
+      <main className={style.main}>{children}</main>
+    </>
   );
 }
+  

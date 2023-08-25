@@ -10,7 +10,14 @@ export default function Dashboard() {
     <div className={style.container}>
       Dashboard
       <UserCard user={session?.user} />
-      <Button color="primary" onClick={() => signOut()}>
+      <Button
+        color="primary"
+        onClick={() =>
+          signOut({
+            callbackUrl: "http://localhost:3000/",
+          })
+        }
+      >
         Sign out
       </Button>
     </div>
