@@ -22,7 +22,7 @@ function SignInButton() {
         onClick={async () => {
           setLoading(true);
           await signIn("google", {
-            callbackUrl: "http://localhost:3000/dashboard",
+            callbackUrl: "http://localhost:3000/Dashboard",
           });
         }}
       >
