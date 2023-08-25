@@ -12,9 +12,11 @@ export default function Dashboard() {
       <Layout>
         <div className={style.container}>
           <h1 className={style.title}>Dashboard</h1>
+
           <div>
             <UserCard user={session?.user} />
           </div>
+
           <div>
             <Button
               color="primary"
