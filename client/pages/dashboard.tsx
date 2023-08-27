@@ -1,6 +1,5 @@
-import { signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import UserCard from "./components/UserCard/UserCard";
-import { Button } from "@nextui-org/react";
 import style from "./styles/Dashboard.module.css";
 import Layout from "./Layout";
 import ScoreBoard from "./components/ScoreBoard/ScoreBoard";
