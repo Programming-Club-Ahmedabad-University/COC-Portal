@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body,
+body > main,
+#__next,
+#__next > main {
+	height: 100%;
+}
+
+#__next > main {
+	overflow-y: scroll;
+	padding: 1em 0;
+}
