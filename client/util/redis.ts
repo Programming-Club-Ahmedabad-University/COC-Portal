@@ -15,4 +15,9 @@ redisClient.on("error", function (error) {
 redisClient.on("connect", function () {
 	console.log("connected to redis!");
 });
+// disconnect from redis when the process is terminated
+process.on("SIGINT", function () {
+	console.log("disconnecting from redis");
+	redisClient.quit();
+});
 export default redisClient;

@@ -16,7 +16,7 @@ function useContests() {
 }
 
 import toast, { Toaster } from "react-hot-toast";
-import { Button } from "@nextui-org/react";
+import { Button, Input } from "@nextui-org/react";
 
 export default function LeaderboardConfig() {
 	const { contests, isLoading, isError } = useContests();
@@ -35,9 +35,21 @@ export default function LeaderboardConfig() {
 		<RootLayout>
 			<main className={styles.main}>
 				<h1>Contests on Leaderboard</h1>
-				<Button onClick={() => myToast("Task failed successfully")}>
-					Click me
-				</Button>
+				<div className={styles.addWrapper}>
+					<Input
+						placeholder="Enter contest number"
+						className={styles.addInput}
+					/>
+
+					<Button
+						variant="ghost"
+						color="primary"
+						className={styles.addBtn}
+						onClick={() => myToast("Task failed successfully")}
+					>
+						+
+					</Button>
+				</div>
 				<Toaster position="bottom-right" reverseOrder={false} />
 				<div>{listOfContests}</div>
 			</main>

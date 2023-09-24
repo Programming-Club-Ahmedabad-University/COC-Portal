@@ -5,3 +5,22 @@
 	align-items: center;
 	height: 100%;
 }
+.addWrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1em;
+	width: 100%;
+	max-width: 30em;
+	height: max-content;
+}
+.addBtn {
+	display: flex;
+	flex: 1;
+
+	font-size: 1.5em;
+}
+.addInput {
+	flex: 10;
+}
