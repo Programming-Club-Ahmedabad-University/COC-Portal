@@ -7,10 +7,10 @@ import {
 	CardFooter,
 	CardHeader,
 } from "@nextui-org/react";
-import { DefaultSession } from "next-auth";
+import { Session } from "next-auth";
 import React from "react";
 
-function UserCard({ user }: { user: DefaultSession["user"] }) {
+function UserCard({ user }: { user: Session["user"] }) {
 	return (
 		<Card className="max-w-[340px]">
 			<CardHeader className="justify-between">
@@ -26,6 +26,9 @@ function UserCard({ user }: { user: DefaultSession["user"] }) {
 						</h4>
 						<h5 className="text-small tracking-tight text-default-400">
 							{user?.email}
+						</h5>
+						<h5 className="text-small tracking-tight text-default-400">
+							{user.role}
 						</h5>
 					</div>
 				</div>
