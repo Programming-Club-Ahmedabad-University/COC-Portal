@@ -8,6 +8,9 @@ import WebSocket from "ws";
 import redisClient from "./util/redis";
 
 var app = express();
+app.use("/test", async function (req: Request, res: Response, next) {
+	return res.send("hello world");
+});
 app.use("/", async function (req: Request, res: Response, next) {
 	const count = await redisClient.incr("count");
 

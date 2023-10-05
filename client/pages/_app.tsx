@@ -7,16 +7,16 @@ import "./styles/globals.css";
 import { NextUIProvider } from "@nextui-org/react";
 
 export default function App({
-  Component,
-  pageProps: { session, ...pageProps },
+	Component,
+	pageProps: { session, ...pageProps },
 }: AppProps<{ session: Session }>) {
-  return (
-    <SessionProvider session={session}>
-      <NextUIProvider>
-        <main className="dark text-foreground bg-background">
-          <Component {...pageProps} />
-        </main>
-      </NextUIProvider>
-    </SessionProvider>
-  );
+	return (
+		<main className="dark text-foreground bg-background">
+			<SessionProvider session={session}>
+				<NextUIProvider>
+					<Component {...pageProps} />
+				</NextUIProvider>
+			</SessionProvider>
+		</main>
+	);
 }
