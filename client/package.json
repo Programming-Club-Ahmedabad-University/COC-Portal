@@ -26,5 +26,10 @@
     "redis": "^4.6.10",
     "swr": "^2.2.2",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "postcss": "^8.4.31",
+    "postcss-preset-mantine": "^1.8.0",
+    "postcss-simple-vars": "^7.0.1"
   }
 }

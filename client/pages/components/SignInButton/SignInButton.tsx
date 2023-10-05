@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@nextui-org/react";
+import { Button } from "@mantine/core";
 import { signIn, signOut, useSession } from "next-auth/react";
 import React, { useState } from "react";
 import UserCard from "../UserCard/UserCard";
