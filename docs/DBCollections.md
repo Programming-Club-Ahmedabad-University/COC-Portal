@@ -4,13 +4,12 @@
 
 ```json
 {
-	"username": "string",
+	"_id":ObjectId,
 	"email": "string",
-	"firstName": "string",
-	"lastName": "string",
+	"name": "string",
 	"role": "string",
-	"profilePicture": "string",
-	"createdAt": "date",
-	"updatedAt": "date"
+	// "profilePicture": "string",
+	// "createdAt": "date",
+	// "updatedAt": "date"
 }
 ```

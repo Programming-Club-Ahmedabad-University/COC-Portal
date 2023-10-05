@@ -22,7 +22,7 @@ const handler = NextAuth({
 			const userOnDB = await users.findOne({ email: user.email! });
 
 			if (!userOnDB) {
-				users.insertOne({
+				await users.insertOne({
 					name: user.name!,
 					email: user.email!,
 					role: null,

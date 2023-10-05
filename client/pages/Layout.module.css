@@ -1,0 +1,8 @@
+.contentWrapper {
+	height: inherit;
+}
+.navBarWrapper {
+	position: sticky;
+	top: 0;
+	width: 100%;
+}
