@@ -4,14 +4,14 @@ import {
 	NavbarBrand,
 	NavbarContent,
 	NavbarItem,
-} from "@nextui-org/react";
+} from '@chakra-ui/react'
 import {
 	Dropdown,
 	DropdownTrigger,
 	DropdownMenu,
 	DropdownItem,
 	Button,
-} from "@nextui-org/react";
+} from '@chakra-ui/react'
 import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
