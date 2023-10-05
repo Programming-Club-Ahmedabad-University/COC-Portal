@@ -7,7 +7,7 @@ import {
   CardFooter,
   CardHeader,
   Button,
-} from "@nextui-org/react";
+} from "@mantine/core";
 import { Session } from "next-auth";
 import React from "react";
 

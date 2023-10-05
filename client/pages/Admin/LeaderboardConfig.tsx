@@ -38,7 +38,7 @@ async function postContest(
 }
 
 import toast, { Toaster } from "react-hot-toast";
-import { Button, Input } from "@nextui-org/react";
+import { Button, Input } from "@mantine/core";
 import React from "react";
 
 export default function LeaderboardConfig() {
