@@ -1,17 +1,20 @@
+import styles from "./Navbar.module.css";
+
 import {
   Avatar,
-  //   TODO: make the following:
-  //   Navbar,
-  //   NavbarBrand,
-  //   NavbarContent,
-  //   NavbarItem,
+  PopoverTrigger,
+  Button,
+  PopoverContent,
+  Menu,
+  MenuButton,
+  MenuList,
 } from "@chakra-ui/react";
 
-import { Popover, PopoverTrigger, Menu, Button } from "@chakra-ui/react";
 import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useState } from "react";
+
 export default function NavBar() {
   const { data: session } = useSession();
   const [loading, setLoading] = useState(false);
@@ -24,6 +27,7 @@ export default function NavBar() {
       link: "/",
     },
   ];
+
   if (session && session.user) {
     if (session.user.role === "Admin") {
       navItems.push({
@@ -32,18 +36,16 @@ export default function NavBar() {
       });
     }
     authBtn = (
-      <>
-        <Popover>
-          <PopoverTrigger>
-            <Avatar src={session.user.image!} />
-          </PopoverTrigger>
-          <Menu aria-label="Static Actions">
-            <div key="new" color="danger" onClick={() => signOut()}>
-              Sign out
-            </div>
-          </Menu>
-        </Popover>
-      </>
+      <div className={styles.navMenu}>
+        <Menu>
+          <MenuButton>
+            <Avatar className={styles.avatarButton} src={session.user.image!} />
+          </MenuButton>
+          <MenuList minWidth="100px" padding={"0.3em"}>
+            <Button onClick={() => signOut()}>Sign out</Button>
+          </MenuList>
+        </Menu>
+      </div>
     );
   } else {
     authBtn = (
@@ -62,33 +64,22 @@ export default function NavBar() {
   }
 
   return (
-    <div>
-      <div>
-        <p className="font-bold text-inherit">COC </p>
-      </div>
-      <div>
+    <div className={styles.mainNav}>
+      <div className={styles.navItem}>
         {navItems.map((item) => (
           <div key={item.name}>
             <Link href={item.link}>
-              <div
-                className={
-                  item.link != router.pathname
-                    ? "text-foreground"
-                    : "text-primary"
-                }
-              >
-                {item.name}
-              </div>
+              <div>{item.name}</div>
             </Link>
           </div>
         ))}
       </div>
-      <div>
+      <div className={styles.mainNavSide}>
         {session && session.user && (
           <>
-            <div>
-              {session.user.name}
-              <small>{session.user.role}</small>
+            <div className={styles.sideItems}>
+              <div>{session.user.name}</div>
+              <div>{session.user.role}</div>
             </div>
           </>
         )}

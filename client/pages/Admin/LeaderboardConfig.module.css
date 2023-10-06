@@ -1,26 +1,40 @@
 .main {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  gap: 1em;
 }
+
 .addWrapper {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	gap: 1em;
-	width: 100%;
-	max-width: 30em;
-	height: max-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  width: 100%;
+  max-width: 30em;
+  height: max-content;
 }
 .addBtn {
-	display: flex;
-	flex: 1;
+  display: flex;
+  flex: 1;
 
-	font-size: 1.5em;
+  font-size: 1.5em;
 }
 .addInput {
-	flex: 10;
+  flex: 10;
+}
+
+.listContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 0 1em;
 }

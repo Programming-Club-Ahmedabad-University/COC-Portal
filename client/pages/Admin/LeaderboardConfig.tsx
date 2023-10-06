@@ -2,6 +2,7 @@ import { fetcher, myToast } from "@/util/functions";
 import RootLayout from "../Layout";
 import styles from "./LeaderboardConfig.module.css";
 import useSWR from "swr";
+
 function useContests() {
   const { data, error, isLoading, mutate } = useSWR(
     `/api/admin/contestConfig`,
@@ -46,7 +47,9 @@ export default function LeaderboardConfig() {
   const [contest, setContest] = React.useState("");
   const [isLoadingPost, setIsLoadingPost] = React.useState(false);
   const [isErrorPost, setIsErrorPost] = React.useState(false);
+
   let listOfContests;
+
   if (isLoading) {
     listOfContests = <div>Loading...</div>;
   } else if (isError) {
@@ -57,6 +60,7 @@ export default function LeaderboardConfig() {
       return <div key={contest}>{contest}</div>;
     });
   }
+
   return (
     <RootLayout>
       <main className={styles.main}>
@@ -70,7 +74,6 @@ export default function LeaderboardConfig() {
           />
 
           <Button
-            variant="ghost"
             color="primary"
             className={styles.addBtn}
             onClick={() => {
@@ -87,8 +90,9 @@ export default function LeaderboardConfig() {
             +
           </Button>
         </div>
+
         <Toaster position="bottom-right" reverseOrder={false} />
-        <div>{listOfContests}</div>
+        <div className={styles.listConent}>{listOfContests}</div>
       </main>
     </RootLayout>
   );
