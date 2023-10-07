@@ -42,7 +42,15 @@ export default function NavBar() {
             <Avatar className={styles.avatarButton} src={session.user.image!} />
           </MenuButton>
           <MenuList minWidth="100px" padding={"0.3em"}>
-            <Button onClick={() => signOut()}>Sign out</Button>
+            <Button
+              onClick={() =>
+                signOut({
+                  callbackUrl: "/",
+                })
+              }
+            >
+              Sign out
+            </Button>
           </MenuList>
         </Menu>
       </div>
