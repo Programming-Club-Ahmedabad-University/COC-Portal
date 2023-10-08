@@ -36,19 +36,6 @@ const theme = extendTheme({
 				},
 			},
 		},
-		Menu: {
-			baseStyle: {
-				backgroundColor: getColor("background"),
-				border: "1px solid black",
-				textTransform: "uppercase",
-			},
-		},
-		MenuButton: {
-			baseStyle: {
-				color: getColor("text"),
-				textTransform: "uppercase",
-			},
-		},
 	},
 	colors,
 });
