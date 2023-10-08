@@ -26,10 +26,27 @@ const theme = extendTheme({
 	components: {
 		Button: {
 			variants: {
-				my: {
+				primary: {
 					text: getColor("text"),
 					bg: getColor("primary"),
 				},
+				secondary: {
+					text: getColor("background"),
+					bg: getColor("secondary"),
+				},
+			},
+		},
+		Menu: {
+			baseStyle: {
+				backgroundColor: getColor("background"),
+				border: "1px solid black",
+				textTransform: "uppercase",
+			},
+		},
+		MenuButton: {
+			baseStyle: {
+				color: getColor("text"),
+				textTransform: "uppercase",
 			},
 		},
 	},

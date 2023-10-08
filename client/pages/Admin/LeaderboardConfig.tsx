@@ -74,7 +74,7 @@ export default function LeaderboardConfig() {
 					/>
 
 					<Button
-						variant={"my"}
+						variant={"primary"}
 						className={styles.addBtn}
 						onClick={() => {
 							postContest(
