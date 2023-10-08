@@ -5,18 +5,19 @@ import type { Session } from "next-auth";
 import "./styles/globals.css";
 
 import { ChakraProvider } from "@chakra-ui/react";
+import theme from "@/util/theme";
 
 export default function App({
-  Component,
-  pageProps: { session, ...pageProps },
+	Component,
+	pageProps: { session, ...pageProps },
 }: AppProps<{ session: Session }>) {
-  return (
-    <main className="dark text-foreground bg-background">
-      <SessionProvider session={session}>
-        <ChakraProvider>
-          <Component {...pageProps} />
-        </ChakraProvider>
-      </SessionProvider>
-    </main>
-  );
+	return (
+		<main className="dark text-foreground bg-background">
+			<SessionProvider session={session}>
+				<ChakraProvider theme={theme}>
+					<Component {...pageProps} />
+				</ChakraProvider>
+			</SessionProvider>
+		</main>
+	);
 }
