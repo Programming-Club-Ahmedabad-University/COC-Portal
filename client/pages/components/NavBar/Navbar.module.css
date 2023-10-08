@@ -35,3 +35,7 @@
 .avatarButton {
 	cursor: pointer;
 }
+.menuList {
+	min-width: 100px;
+	padding: 0.3em;
+}

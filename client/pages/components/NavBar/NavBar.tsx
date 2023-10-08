@@ -44,7 +44,7 @@ export default function NavBar() {
 							src={session.user.image!}
 						/>
 					</MenuButton>
-					<MenuList minWidth="100px" padding={"0.3em"}>
+					<MenuList className={styles.menuList}>
 						<Button
 							variant={"secondary"}
 							onClick={() =>
