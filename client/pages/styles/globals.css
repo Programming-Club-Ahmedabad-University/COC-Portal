@@ -24,13 +24,22 @@ body > main,
 	height: 100%;
 }
 
+@media (max-width: 768px) {
+	#__next > main {
+		padding: 0.3em;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		font-size: smaller;
+	}
+}
+
 #__next > main {
 	overflow-y: scroll;
 	padding: 0.3em;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	align-items: center;
 }
 
 /* modified scrollbar: */

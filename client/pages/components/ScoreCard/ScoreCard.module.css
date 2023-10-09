@@ -1,8 +1,23 @@
-.whole{
-    border-radius: 1em;
-    border-color: primary;
-    display: flex;
-    justify-content: center;
+.tableHeader {
+display: flex;
+    flex-direction: row;
     align-items: center;
-    height: 100%;
+    padding: 0 1rem;
+    /* margin-bottom: 1rem; */
+    gap:20px;
+}
+
+.tableEntry{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    /* margin-bottom: 1rem; */
+}
+.tableWrapper{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
 }

@@ -1,62 +1,78 @@
 import React from "react";
 import styles from "./ScoreCard.module.css";
-import {
-  TableContainer,
-  Table,
-  Thead,
-  Tr,
-  Th,
-  Tbody,
-  Td,
-  Tfoot,
-} from "@chakra-ui/react";
+
+// typedefination for data object:
+type ScoreCardData = {
+  name1: string;
+  score1: number;
+  name2: string;
+  score2: number;
+};
 
 function ScoreCard() {
+  // data for the table:
+  const data: ScoreCardData[] = [
+    {
+      name1: "Playera1",
+      score1: 0,
+      name2: "Playerb1",
+      score2: 0,
+    },
+    {
+      name1: "Playera2",
+      score1: 0,
+      name2: "Playerb2",
+      score2: 0,
+    },
+    {
+      name1: "Playera3",
+      score1: 0,
+      name2: "Playerb3",
+      score2: 0,
+    },
+    {
+      name1: "Playera4",
+      score1: 0,
+      name2: "Playerb4",
+      score2: 0,
+    },
+  ];
+
   return (
-    <div className={styles.whole}>
-      <TableContainer>
-        <Table variant="simple">
-          <Thead>
-            <Tr>
-              <Th>Sr. </Th>
-              <Th>Team1</Th>
-              <Th isNumeric>Points 1</Th>
-              <Th isNumeric>Points 2</Th>
-              <Th>Team2</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            <Tr>
-              <Td>1</Td>
-              <Td>India</Td>
-              <Td isNumeric>100</Td>
-              <Td isNumeric>200</Td>
-              <Td>England</Td>
-            </Tr>
-            <Tr>
-              <Td>2</Td>
-              <Td>India</Td>
-              <Td isNumeric>100</Td>
-              <Td isNumeric>200</Td>
-              <Td>England</Td>
-            </Tr>
-            <Tr>
-              <Td>3</Td>
-              <Td>India</Td>
-              <Td isNumeric>100</Td>
-              <Td isNumeric>200</Td>
-              <Td>England</Td>
-            </Tr>
-            <Tr>
-              <Td>4</Td>
-              <Td>India</Td>
-              <Td isNumeric>100</Td>
-              <Td isNumeric>200</Td>
-              <Td>England</Td>
-            </Tr>
-          </Tbody>
-        </Table>
-      </TableContainer>
+    // table here:
+    <div className={styles.tableWrapper}>
+      <div className={styles.tableHeader}>
+        <div>
+          <h3>Team A</h3>
+        </div>
+        <div>
+          <h3>Scores A</h3>
+        </div>
+        <div>
+          <h3>Scores B</h3>
+        </div>
+        <div>
+          <h3>Team B</h3>
+        </div>
+      </div>
+
+      {/* table entries: */}
+      {data.map((item, index) => (
+        <div className={styles.tableEntry} key={index}>
+          <div>
+            <h3>{item.name1}</h3>
+          </div>
+          <div>
+            <h3>{item.score1}</h3>
+          </div>
+          <div>
+            <h3>{item.score2}</h3>
+          </div>
+          <div>
+            <h3>{item.name2}</h3>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
