@@ -26,7 +26,7 @@ body > main,
 
 #__next > main {
 	overflow-y: scroll;
-	padding: 1em 0;
+	padding: 0.3em;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
