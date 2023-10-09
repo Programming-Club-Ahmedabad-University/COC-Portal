@@ -7,6 +7,7 @@ const colors = {
 	secondary: "220 51% 84%",
 	accent: "37 98% 47%",
 };
+
 type Colors = "text" | "background" | "primary" | "secondary" | "accent";
 
 export function getColor(color: Colors, opacity?: number) {

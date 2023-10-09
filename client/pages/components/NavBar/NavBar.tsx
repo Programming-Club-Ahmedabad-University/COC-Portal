@@ -44,7 +44,7 @@ export default function NavBar() {
 							src={session.user.image!}
 						/>
 					</MenuButton>
-					<MenuList className={styles.menuList}>
+					<MenuList className={styles.menuList} minWidth='100x'>
 						<Button
 							variant={"secondary"}
 							onClick={() =>
@@ -56,7 +56,7 @@ export default function NavBar() {
 							Sign out
 						</Button>
 					</MenuList>
-				</Menu>
+				</Menu>	
 			</div>
 		);
 	} else {
