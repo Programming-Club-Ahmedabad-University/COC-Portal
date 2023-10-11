@@ -2,6 +2,7 @@ import { fetcher, myToast } from "@/util/functions";
 import RootLayout from "../Layout";
 import styles from "./LeaderboardConfig.module.css";
 import useSWR from "swr";
+
 function useContests() {
 	const { data, error, isLoading, mutate } = useSWR(
 		`/api/admin/contestConfig`,
@@ -38,7 +39,7 @@ async function postContest(
 }
 
 import toast, { Toaster } from "react-hot-toast";
-import { Button, Input } from "@nextui-org/react";
+import { Box, Button, Input } from "@chakra-ui/react";
 import React from "react";
 
 export default function LeaderboardConfig() {
@@ -46,7 +47,9 @@ export default function LeaderboardConfig() {
 	const [contest, setContest] = React.useState("");
 	const [isLoadingPost, setIsLoadingPost] = React.useState(false);
 	const [isErrorPost, setIsErrorPost] = React.useState(false);
+
 	let listOfContests;
+
 	if (isLoading) {
 		listOfContests = <div>Loading...</div>;
 	} else if (isError) {
@@ -57,6 +60,7 @@ export default function LeaderboardConfig() {
 			return <div key={contest}>{contest}</div>;
 		});
 	}
+
 	return (
 		<RootLayout>
 			<main className={styles.main}>
@@ -66,12 +70,11 @@ export default function LeaderboardConfig() {
 						placeholder="Enter contest number"
 						className={styles.addInput}
 						value={contest}
-						onChange={(e) => setContest(e.target.value)}
+						onChange={(e: any) => setContest(e.target.value)}
 					/>
 
 					<Button
-						variant="ghost"
-						color="primary"
+						variant={"primary"}
 						className={styles.addBtn}
 						onClick={() => {
 							postContest(
@@ -92,8 +95,9 @@ export default function LeaderboardConfig() {
 						+
 					</Button>
 				</div>
+
 				<Toaster position="bottom-right" reverseOrder={false} />
-				<div>{listOfContests}</div>
+				<div className={styles.listConent}>{listOfContests}</div>
 			</main>
 		</RootLayout>
 	);

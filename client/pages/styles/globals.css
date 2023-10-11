@@ -1,24 +1,62 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @font-face {
-  font-family: "Clash fonts";
-  src: url("/fonts/Clash-Regular.ttf") format("truetype");
-  /* add additional font formats here if needed */
+	font-family: "Clash fonts";
+	src: url("/fonts/Clash-Regular.ttf") format("truetype");
+	/* add additional font formats here if needed */
 }
 
 html,
 body,
 #__next {
-  height: 100%;
-  background-color: black;
-  font-family: "Clash fonts", sans-serif; /* use the custom font */
+	font-family: "Clash fonts", sans-serif; /* use the custom font */
 }
 
 body {
-  user-select: none;
+	user-select: none;
 }
 * {
-  -webkit-tap-highlight-color: transparent;
+	-webkit-tap-highlight-color: transparent;
+}
+html,
+body,
+body > main,
+#__next,
+#__next > main {
+	height: 100%;
+}
+
+@media (max-width: 768px) {
+	#__next > main {
+		padding: 0.3em;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		font-size: smaller;
+	}
+}
+
+#__next > main {
+	overflow-y: scroll;
+	padding: 0.3em;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+/* modified scrollbar: */
+::-webkit-scrollbar {
+	width: 0.4em;
+}
+::-webkit-scrollbar-thumb {
+	background-color: hsl(var(--nc) / 30%);
+	border-radius: 200em;
+}
+::-webkit-scrollbar-thumb:hover {
+	background-color: hsl(var(--nc) / 60%);
+}
+:root {
+	--text: var(--chakra-colors-text);
+	--background: var(--chakra-colors-background);
+	--primary: var(--chakra-colors-primary);
+	--secondary: var(--chakra-colors-secondary);
+	--accent: var(--chakra-colors-accent);
 }

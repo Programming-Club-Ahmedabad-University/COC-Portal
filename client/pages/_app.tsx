@@ -4,7 +4,8 @@ import type { AppProps } from "next/app";
 import type { Session } from "next-auth";
 import "./styles/globals.css";
 
-import { NextUIProvider } from "@nextui-org/react";
+import { ChakraProvider } from "@chakra-ui/react";
+import theme from "@/util/theme";
 
 export default function App({
 	Component,
@@ -13,9 +14,9 @@ export default function App({
 	return (
 		<main className="dark text-foreground bg-background">
 			<SessionProvider session={session}>
-				<NextUIProvider>
+				<ChakraProvider theme={theme}>
 					<Component {...pageProps} />
-				</NextUIProvider>
+				</ChakraProvider>
 			</SessionProvider>
 		</main>
 	);

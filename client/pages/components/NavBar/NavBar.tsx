@@ -1,21 +1,20 @@
+import styles from "./Navbar.module.css";
+
 import {
 	Avatar,
-	Navbar,
-	NavbarBrand,
-	NavbarContent,
-	NavbarItem,
-} from "@nextui-org/react";
-import {
-	Dropdown,
-	DropdownTrigger,
-	DropdownMenu,
-	DropdownItem,
+	PopoverTrigger,
 	Button,
-} from "@nextui-org/react";
+	PopoverContent,
+	Menu,
+	MenuButton,
+	MenuList,
+} from "@chakra-ui/react";
+
 import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useState } from "react";
+
 export default function NavBar() {
 	const { data: session } = useSession();
 	const [loading, setLoading] = useState(false);
@@ -28,6 +27,7 @@ export default function NavBar() {
 			link: "/",
 		},
 	];
+
 	if (session && session.user) {
 		if (session.user.role === "Admin") {
 			navItems.push({
@@ -36,22 +36,28 @@ export default function NavBar() {
 			});
 		}
 		authBtn = (
-			<>
-				<Dropdown className="dark text-foreground ">
-					<DropdownTrigger>
-						<Avatar src={session.user.image!} />
-					</DropdownTrigger>
-					<DropdownMenu aria-label="Static Actions">
-						<DropdownItem
-							key="new"
-							color="danger"
-							onClick={() => signOut()}
+			<div className={styles.navMenu}>
+				<Menu>
+					<MenuButton>
+						<Avatar
+							className={styles.avatarButton}
+							src={session.user.image!}
+						/>
+					</MenuButton>
+					<MenuList className={styles.menuList} minWidth='100x'>
+						<Button
+							variant={"secondary"}
+							onClick={() =>
+								signOut({
+									callbackUrl: "/",
+								})
+							}
 						>
 							Sign out
-						</DropdownItem>
-					</DropdownMenu>
-				</Dropdown>
-			</>
+						</Button>
+					</MenuList>
+				</Menu>	
+			</div>
 		);
 	} else {
 		authBtn = (
@@ -70,38 +76,27 @@ export default function NavBar() {
 	}
 
 	return (
-		<Navbar>
-			<NavbarBrand>
-				<p className="font-bold text-inherit">COC </p>
-			</NavbarBrand>
-			<NavbarContent className="hidden sm:flex gap-4" justify="center">
+		<div className={styles.mainNav}>
+			<div className={styles.navItem}>
 				{navItems.map((item) => (
-					<NavbarItem key={item.name}>
+					<div key={item.name}>
 						<Link href={item.link}>
-							<div
-								className={
-									item.link != router.pathname
-										? "text-foreground"
-										: "text-primary"
-								}
-							>
-								{item.name}
-							</div>
+							<div>{item.name}</div>
 						</Link>
-					</NavbarItem>
+					</div>
 				))}
-			</NavbarContent>
-			<NavbarContent justify="end">
+			</div>
+			<div className={styles.mainNavSide}>
 				{session && session.user && (
 					<>
-						<div>
-							{session.user.name}
-							<small>{session.user.role}</small>
+						<div className={styles.sideItems}>
+							<div>{session.user.name}</div>
+							<div>{session.user.role}</div>
 						</div>
 					</>
 				)}
-				<NavbarItem>{authBtn}</NavbarItem>
-			</NavbarContent>
-		</Navbar>
+				<div>{authBtn}</div>
+			</div>
+		</div>
 	);
 }

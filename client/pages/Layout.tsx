@@ -1,7 +1,7 @@
 // import "./globals.css";
 
 import type { Metadata } from "next";
-import styles from "./Layout.module.css";
+import styles from "./styles/Layout.module.css";
 import NavBar from "./components/NavBar/NavBar";
 
 // for the fonts:
