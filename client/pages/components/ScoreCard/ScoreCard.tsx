@@ -14,25 +14,25 @@ function ScoreCard() {
   const data: ScoreCardData[] = [
     {
       name1: "Playera1",
-      score1: 0,
+      score1: 690,
       name2: "Playerb1",
-      score2: 0,
+      score2: 10,
     },
     {
       name1: "Playera2",
-      score1: 0,
+      score1: 100,
       name2: "Playerb2",
-      score2: 0,
+      score2: 10,
     },
     {
       name1: "Playera3",
-      score1: 0,
+      score1: 90,
       name2: "Playerb3",
-      score2: 0,
+      score2: 5,
     },
     {
       name1: "Playera4",
-      score1: 0,
+      score1: 40,
       name2: "Playerb4",
       score2: 0,
     },
