@@ -1,3 +1,9 @@
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
 .tableHeader {
 display: flex;
     flex-direction: row;
@@ -16,6 +22,7 @@ display: flex;
     padding: 0 1rem;
     /* margin-bottom: 1rem; */
 }
+
 .tableWrapper{
     display: flex;
     flex-direction: column;

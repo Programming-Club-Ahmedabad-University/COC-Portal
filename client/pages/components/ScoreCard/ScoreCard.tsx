@@ -41,6 +41,7 @@ function ScoreCard() {
   return (
     // table here:
     <div className={styles.tableWrapper}>
+      <h1 className={styles.title}>ScoreCard</h1>
       <div className={styles.tableHeader}>
         <div>
           <h3>Team A</h3>

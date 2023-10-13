@@ -14,3 +14,9 @@
 	flex-direction: column;
 	gap: 2rem;
 }
+
+.btnGrp{
+	display: flex;
+	gap: 1rem;
+	margin-bottom: 1em;
+}

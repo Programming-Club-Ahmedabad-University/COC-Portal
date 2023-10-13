@@ -1,6 +1,29 @@
 .title {
   font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/*TODO grid with 5 cols: 
+- first col === 2 cols
+- 2nd col === 1 col
+-3rd col === 2 cols*/
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  justify-content: space-between;
+  padding: 0 1rem;
+  gap: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.tableEntry {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  width: 100%;
+  justify-content: space-around;
+  padding: 0 1rem;
   text-align: center;
 }
