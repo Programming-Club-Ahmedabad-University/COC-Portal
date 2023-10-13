@@ -57,10 +57,10 @@ function ScoreBoard() {
   };
 
   // function of eligibility:
-  // if points >= 90 => leader
-  // if points >= 80 => coleader
-  // if points >= 70 => elder
-  // if points >= 60 => member
+  // if rank <= 4 => leader
+  // if rank <= 15 => coleader
+  // if rank <= 30 => elder
+  // if rank <= 60 => member
 
   function eligibility(rank: number) {
     if (rank <= 4) {
