@@ -11,7 +11,7 @@
 
 .tableHeader {
   display: grid;
-  grid-template-columns: 2fr 1fr 2fr;
+  grid-template-columns: 2fr 1fr 2fr 2fr;
   justify-content: space-between;
   padding: 0 1rem;
   gap: 20px;
@@ -19,11 +19,17 @@
   text-align: center;
 }
 
-.tableEntry {
+.tableEntry { 
   display: grid;
-  grid-template-columns: 2fr 1fr 2fr;
+  grid-template-columns: 2fr 1fr 2fr 2fr;
   width: 100%;
   justify-content: space-around;
   padding: 0 1rem;
   text-align: center;
 }
+
+.tableEntry > div:nth-child(1),
+.tableHeader > div:nth-child(1) {
+  text-align: left;
+} 
+
