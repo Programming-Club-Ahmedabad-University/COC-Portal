@@ -13,27 +13,25 @@ export default function Home() {
     <RootLayout>
       <main className={styles.main}>
         <div className={styles.btnGrp}>
-          <ButtonGroup>
-            {/* button to show ScoreCard component */}
-            <Button
-              onClick={() => {
-                setShowScoreCard(!showScoreCard);
-                setShowScoreBoard(false);
-              }}
-            >
-              Show ScoreCard
-            </Button>
+          {/* button to show ScoreCard component */}
+          <Button
+            onClick={() => {
+              setShowScoreCard(!showScoreCard);
+              setShowScoreBoard(false);
+            }}
+          >
+            Show ScoreCard
+          </Button>
 
-            {/* button to show ScoreBoard component */}
-            <Button
-              onClick={() => {
-                setShowScoreBoard(!showScoreBoard);
-                setShowScoreCard(false);
-              }}
-            >
-              Show ScoreBoard
-            </Button>
-          </ButtonGroup>
+          {/* button to show ScoreBoard component */}
+          <Button
+            onClick={() => {
+              setShowScoreBoard(!showScoreBoard);
+              setShowScoreCard(false);
+            }}
+          >
+            Show ScoreBoard
+          </Button>
         </div>
 
         {showScoreCard && <ScoreCard />}

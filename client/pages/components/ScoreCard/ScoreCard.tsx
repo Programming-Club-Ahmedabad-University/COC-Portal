@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./ScoreCard.module.css";
+import { Divider } from "@chakra-ui/react";
 
 // typedefination for data object:
 type ScoreCardData = {
@@ -42,6 +43,7 @@ function ScoreCard() {
     // table here:
     <div className={styles.tableWrapper}>
       <h1 className={styles.title}>ScoreCard</h1>
+
       <div className={styles.tableHeader}>
         <div>
           <h3>Team A</h3>
@@ -56,6 +58,8 @@ function ScoreCard() {
           <h3>Team B</h3>
         </div>
       </div>
+
+      <Divider />
 
       {/* table entries: */}
       {data.map((item, index) => (

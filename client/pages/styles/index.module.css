@@ -17,6 +17,13 @@
 
 .btnGrp{
 	display: flex;
+	flex-direction: row;
 	gap: 1rem;
 	margin-bottom: 1em;
+}
+
+@media (max-width: 768px) {
+	.btnGrp{
+		flex-direction: column;
+	}
 }

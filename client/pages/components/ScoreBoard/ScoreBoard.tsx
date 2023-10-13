@@ -1,3 +1,4 @@
+import { Divider } from "@chakra-ui/react";
 import styles from "./ScoreBoard.module.css";
 
 function ScoreBoard() {
@@ -88,6 +89,8 @@ function ScoreBoard() {
         <div>Eligibility</div>
       </div>
 
+
+      <Divider />
       {/* table entries: */}
       {data.players.map((item, index) => (
         <div className={styles.tableEntry} key={index}>
