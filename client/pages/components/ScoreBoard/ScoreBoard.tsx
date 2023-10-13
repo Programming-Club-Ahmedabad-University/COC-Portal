@@ -62,14 +62,14 @@ function ScoreBoard() {
   // if points >= 70 => elder
   // if points >= 60 => member
 
-  function eligibility(points: number) {
-    if (points >= 90) {
+  function eligibility(rank: number) {
+    if (rank <= 4) {
       return "leader";
-    } else if (points >= 80) {
+    } else if (rank <= 15) {
       return "coleader";
-    } else if (points >= 70) {
+    } else if (rank <= 30) {
       return "elder";
-    } else if (points >= 60) {
+    } else if (rank <= 60) {
       return "member";
     } else {
       return "not eligible";
@@ -94,7 +94,7 @@ function ScoreBoard() {
           <div>{item.Name}</div>
           <div>{item.Rank}</div>
           <div>{item["Points Scored"]}</div>
-          <div>{eligibility(item["Points Scored"])}</div>
+          <div>{eligibility(item.Rank)}</div>
         </div>
       ))}
     </div>
