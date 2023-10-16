@@ -96,6 +96,9 @@ export default function LeaderboardConfig() {
 					</Button>
 				</div>
 
+
+				
+
 				<Toaster position="bottom-right" reverseOrder={false} />
 				<div className={styles.listConent}>{listOfContests}</div>
 			</main>
