@@ -1,10 +1,15 @@
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
 .tableHeader {
-display: flex;
+    display: flex;
     flex-direction: row;
-    align-items: center;
-    padding: 0 1rem;
-    /* margin-bottom: 1rem; */
-    gap:20px;
+    padding: 0 0.5rem;
+    width: 100%;
+    gap: 2.5rem;
 }
 
 .tableEntry{
@@ -12,10 +17,8 @@ display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
-    align-items: center;
-    padding: 0 1rem;
-    /* margin-bottom: 1rem; */
 }
+
 .tableWrapper{
     display: flex;
     flex-direction: column;
