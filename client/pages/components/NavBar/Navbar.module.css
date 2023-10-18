@@ -35,7 +35,8 @@
   .navItem {
 	color: white;
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 	gap: 0.5em;
   }
   
