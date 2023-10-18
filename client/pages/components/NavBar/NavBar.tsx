@@ -14,6 +14,7 @@ import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function NavBar() {
 	const { data: session } = useSession();
@@ -39,12 +40,9 @@ export default function NavBar() {
 			<div className={styles.navMenu}>
 				<Menu>
 					<MenuButton>
-						<Avatar
-							className={styles.avatarButton}
-							src={session.user.image!}
-						/>
+						<Avatar className={styles.avatarButton} src={session.user.image!} />
 					</MenuButton>
-					<MenuList className={styles.menuList} minWidth='100x'>
+					<MenuList className={styles.menuList} minWidth="100x">
 						<Button
 							variant={"secondary"}
 							onClick={() =>
@@ -56,7 +54,7 @@ export default function NavBar() {
 							Sign out
 						</Button>
 					</MenuList>
-				</Menu>	
+				</Menu>
 			</div>
 		);
 	} else {
@@ -77,7 +75,7 @@ export default function NavBar() {
 
 	return (
 		<div className={styles.mainNav}>
-			<div className={styles.navItem}>
+			{/* <div className={styles.navItem}>
 				{navItems.map((item) => (
 					<div key={item.name}>
 						<Link href={item.link}>
@@ -95,6 +93,25 @@ export default function NavBar() {
 						</div>
 					</>
 				)}
+			</div> */}
+
+			{/* top */}
+			<div className={styles.navTop}>
+				<Button>Home</Button>
+				<Button>Standings</Button>
+				<Button>Live</Button>
+			</div>
+
+			{/* mid */}
+			<div className={styles.navMid}>
+				<Image src="/images/logo.png" alt="logo" width={150} height={150} />
+			</div>
+
+			{/* bottom */}
+			<div className={styles.navEnd}>
+				{/* profile pic: */}
+				<Button>Battles</Button>
+				<Button>Players</Button>
 				<div>{authBtn}</div>
 			</div>
 		</div>
