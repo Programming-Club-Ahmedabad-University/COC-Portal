@@ -4,9 +4,10 @@
 	justify-content: center;
 	align-items: center;
 	color: white !important;
+	margin-block: 1.5em;
 }
 
 .txt {
-  font-size: 1.5rem;
-  font-weight: 600;
+	font-size: 1.5rem;
+	font-weight: 600;
 }
