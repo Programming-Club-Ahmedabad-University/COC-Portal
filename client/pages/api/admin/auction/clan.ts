@@ -20,10 +20,10 @@ export default async function handler(
 async function GET(req: NextApiRequest, res: NextApiResponse) {
 	const db = (await clientPromise).db("coc-portal");
 	const clans = db.collection<ClanCol>("Clans");
-
-    const fields = await clans.find();
-    return res.json(fields);
-}
+  
+	const fields = await clans.find().toArray();
+	return res.json(fields);
+}  
 
 async function POST(req: NextApiRequest, res: NextApiResponse ) {
     const {name,amount,admin} = req.body;

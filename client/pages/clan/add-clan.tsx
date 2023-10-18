@@ -1,5 +1,5 @@
-'use client'
 import React, { useState } from "react";
+import { Box, Button, Input, FormControl, FormLabel } from "@chakra-ui/react";
 
 const Clan = () => {
   const [name, setName] = useState("");
@@ -33,33 +33,39 @@ const Clan = () => {
   };
 
   return (
-    <div>
-      <form
-        style={{ display: 'flex', justifyContent: 'center', flexDirection: "column", gap: "10px" }}
-      >
-        <input
+    <Box display="flex" justifyContent="center" flexDirection="column" gap={3}>
+      <FormControl>
+        <FormLabel>Enter clan name:</FormLabel>
+        <Input
           type="text"
-          placeholder="Enter clan name..."
           value={name}
           onChange={(e) => setName(e.target.value)}
+          placeholder="Enter clan name..."
         />
-        <input
+      </FormControl>
+
+      <FormControl>
+        <FormLabel>Enter budget:</FormLabel>
+        <Input
           type="number"
-          placeholder="Enter budget"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
+          placeholder="Enter budget"
         />
-        <input
+      </FormControl>
+
+      <FormControl>
+        <FormLabel>Clan admin registered e-mail id:</FormLabel>
+        <Input
           type="text"
-          placeholder="clan admin registered e-mail id"
           value={admin}
           onChange={(e) => setAdmin(e.target.value)}
+          placeholder="Clan admin registered e-mail id"
         />
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: "center" }}>
-          <button onClick={(e) => handleSubmit(e)}>Add</button>
-        </div>
-      </form>
-    </div>
+      </FormControl>
+
+      <Button onClick={(e) => handleSubmit(e)} colorScheme="teal">Add</Button>
+    </Box>
   );
 };
 

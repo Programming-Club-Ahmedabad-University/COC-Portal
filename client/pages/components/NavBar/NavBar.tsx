@@ -26,6 +26,14 @@ export default function NavBar() {
 			name: "Leaderboard",
 			link: "/",
 		},
+		{
+			name:"Add clans",
+			link:"/clan/add-clan",
+		},
+		{
+			name:"Clans",
+			link:"/clan/clans",
+		},
 	];
 
 	if (session && session.user) {
