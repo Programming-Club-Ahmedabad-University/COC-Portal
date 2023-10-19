@@ -1,0 +1,33 @@
+.blurredCircle {
+	filter: blur(200px);
+
+	flex-shrink: 0;
+	z-index: -1;
+	position: absolute;
+	animation: scale 4s infinite linear;
+}
+
+.blurredCircle:nth-child(2) {
+	animation-delay: 2s; /* Delay the animation for the second div */
+}
+
+.blurredCircle:nth-child(3) {
+	animation-delay: 0.4s; /* Delay the animation for the third div */
+}
+
+.blurredCircle:nth-child(4) {
+	animation-delay: 0.6s; /* Delay the animation for the fourth div */
+}
+
+@keyframes scale {
+	0% {
+		transform: scale(100%);
+	}
+	50% {
+		transform: scale(50%);
+	}
+
+	100% {
+		transform: scale(100%);
+	}
+}

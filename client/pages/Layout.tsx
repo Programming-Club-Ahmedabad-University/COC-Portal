@@ -3,6 +3,7 @@
 import type { Metadata } from "next";
 import styles from "./styles/Layout.module.css";
 import NavBar from "./components/NavBar/NavBar";
+import BlurredCircle from "./components/BlurredCircle/BlurredCircle";
 
 // for the fonts:
 
@@ -17,11 +18,35 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<>
+		<div className={styles.layoutWrapper}>
 			<div className={styles.navBarWrapper}>
 				<NavBar />
 			</div>
+			<BlurredCircle
+				color="#EF0600"
+				height="400px"
+				width="400px"
+				radius="1004px"
+				top="0"
+				left="10%"
+			/>
+			<BlurredCircle
+				color="#F7A92E"
+				height="400px"
+				width="400px"
+				radius="1004px"
+				top="0"
+				left="50%"
+			/>
+			<BlurredCircle
+				color="#65B9DE"
+				height="400px"
+				width="400px"
+				radius="1004px"
+				top="50%"
+				left="50%"
+			/>
 			<div className={styles.contentWrapper}>{children}</div>
-		</>
+		</div>
 	);
 }
