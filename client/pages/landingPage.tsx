@@ -15,8 +15,8 @@ function landingPage() {
 				<CodeDivider />
 
 				{/* card */}
-				<div className={styles.card}>
-					<Image src="/images/barb.png" alt="logo" width={350} height={350} />
+				<div className={styles.cardA}>
+					<Image src="/images/barb.png" alt="barb" width={782} height={500} />
 					<div className={styles.txt}>
 						<div className={styles.title}>
 							Lorem, ipsum dolor sit amet consectetur
@@ -35,12 +35,28 @@ function landingPage() {
 				<CodeDivider />
 
 				{/* card */}
-				<div></div>
+				<div className={styles.cardB}>
+					<Image
+						src="/images/builder.png"
+						alt="build"
+						width={1050}
+						height={521}
+					/>
+					<div className={styles.txt}>
+						<div className={styles.titleB}>COC Auction is Live Now!</div>
+					</div>
+					<div className={styles.subTxtB}>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+						eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci
+						nulla pellentesque dignissim enim sit amet venenatis urna cursus.
+						Morbi tristique senectus et netus et malesuada fames.
+					</div>
+				</div>
 
 				<CodeDivider />
 
 				{/* card */}
-				<div></div>
+				<div className={styles.cardB} >  </div>
 			</RootLayout>
 		</>
 	);
