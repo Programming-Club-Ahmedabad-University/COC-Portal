@@ -24,24 +24,24 @@ export default function RootLayout({
 			</div>
 			<BlurredCircle
 				color="#EF0600"
-				height="400px"
-				width="400px"
+				height="500px"
+				width="500px"
 				radius="1004px"
 				top="0"
 				left="10%"
 			/>
 			<BlurredCircle
 				color="#F7A92E"
-				height="400px"
-				width="400px"
+				height="500px"
+				width="500px"
 				radius="1004px"
 				top="0"
 				left="50%"
 			/>
 			<BlurredCircle
 				color="#65B9DE"
-				height="400px"
-				width="400px"
+				height="500px"
+				width="500px"
 				radius="1004px"
 				top="50%"
 				left="50%"
