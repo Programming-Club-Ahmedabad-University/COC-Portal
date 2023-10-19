@@ -68,33 +68,13 @@ export default function NavBar() {
 					await signIn("google");
 				}}
 			>
-				{loading ? "Signin In..." : "Sign in with Google"}
+				{loading ? "Signin In..." : "Sign in"}
 			</Button>
 		);
 	}
 
 	return (
 		<div className={styles.mainNav}>
-			{/* <div className={styles.navItem}>
-				{navItems.map((item) => (
-					<div key={item.name}>
-						<Link href={item.link}>
-							<div>{item.name}</div>
-						</Link>
-					</div>
-				))}
-			</div>
-			<div className={styles.mainNavSide}>
-				{session && session.user && (
-					<>
-						<div className={styles.sideItems}>
-							<div>{session.user.name}</div>
-							<div>{session.user.role}</div>
-						</div>
-					</>
-				)}
-			</div> */}
-
 			{/* top */}
 			<div className={styles.navTop}>
 				<Button>Home</Button>
