@@ -27,7 +27,10 @@ function ClanCard({ clan }: { clan: string }) {
 			</div>
 			{/* Image */}
 			<div className={styles[`pic${getCol({ clan })}`]}>
-				<Image
+				<Image.pic .w {
+	bottom: -5em;
+}
+
 					src={`/images/troops/${getCol({ clan })}.png`}
 					alt={clan}
 					width={403}
