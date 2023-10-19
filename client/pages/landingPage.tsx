@@ -3,6 +3,7 @@ import RootLayout from "./Layout";
 import styles from "./styles/landingPage.module.css";
 import CodeDivider from "./components/CodeDivider/CodeDivider";
 import Image from "next/image";
+import ClanCard from "./components/ClanCard/ClanCard";
 
 function landingPage() {
 	return (
@@ -56,7 +57,26 @@ function landingPage() {
 				<CodeDivider />
 
 				{/* card */}
-				<div className={styles.cardB} >  </div>
+				<div className={styles.cardB}>
+					<div className={styles.headLine}>4 Clans. 16 Teams. 1 Winner.</div>
+					<div className={styles.subTxtB}>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+						eiusmod tempor
+					</div>
+
+					<div className={styles.cardGrid}>
+						<ClanCard clan="Wizards"/>
+						<ClanCard clan="P.E.K.K.A.s"/>
+						<ClanCard clan="Barbarians"/>
+						<ClanCard clan="Giants"/>
+					</div>
+
+					<div className={styles.subTxtB}>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+						eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci
+						nulla pellentesque
+					</div>
+				</div>
 			</RootLayout>
 		</>
 	);

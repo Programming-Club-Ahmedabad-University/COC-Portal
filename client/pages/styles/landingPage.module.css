@@ -2,7 +2,7 @@
 	display: flex;
 	justify-content: center;
 	text-align: center;
-	font-size: 1.5rem;
+	font-size: 3rem;
 	font-weight: 500;
 
 	background: linear-gradient(
@@ -59,4 +59,11 @@
 	font-size: 1.5rem;
 	padding-inline: 8em;
 	text-align: center;
+}
+
+.cardGrid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 3em;
+	padding: 4em;
 }
