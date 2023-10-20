@@ -38,10 +38,9 @@
 
 .cardInfo {
 	display: flex;
-	gap: 1em;
-	display: flex;
 	flex-direction: column;
-	padding-left: 1em;
+	padding-left: 1.5em;
+	justify-content: space-around;
 }
 
 .pic .w {
@@ -55,12 +54,4 @@
 }
 .pic .b {
 	bottom: -5em;
-}
-
-.title {
-	font-size: 3em;
-}
-.sub {
-	font-size: 1em;
-	padding-bottom: -2em;
 }

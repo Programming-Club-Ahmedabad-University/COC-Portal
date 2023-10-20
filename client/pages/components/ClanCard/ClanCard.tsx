@@ -3,6 +3,10 @@ import styles from "./ClanCard.module.css";
 import Image from "next/image";
 import classNames from "classnames";
 
+import Title from "../Title/Title";
+import SubText from "../SubText/SubText";
+import InfoText from "../InfoText/InfoText";
+
 function ClanCard({ clan }: { clan: string }) {
 	function getCol({ clan }: { clan: string }): string {
 		switch (clan) {
@@ -20,10 +24,8 @@ function ClanCard({ clan }: { clan: string }) {
 	return (
 		<div className={classNames(styles.cardMini, styles[getCol({ clan })])}>
 			<div className={styles.cardInfo}>
-				<div className={styles.title}>{clan}</div>
-				<div className={styles.sub}>
-					Lorem, ipsum dolor sit amet consectetur adipisicing{" "}
-				</div>
+				<Title content={clan} />
+				<InfoText content="Lorem, ipsum dolor sit amet consectetur adipisicing" />
 			</div>
 			{/* Image */}
 			<div className={styles[`pic${getCol({ clan })}`]}>

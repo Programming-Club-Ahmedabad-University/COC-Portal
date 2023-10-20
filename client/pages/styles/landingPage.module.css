@@ -2,8 +2,6 @@
 	display: flex;
 	justify-content: center;
 	text-align: center;
-	font-size: 3rem;
-	font-weight: 500;
 
 	background: linear-gradient(
 		138deg,
@@ -30,12 +28,15 @@
 	flex-direction: row;
 	justify-content: center;
 	gap: 2em;
+	margin-inline: auto;
 }
 
 .cardB {
 	display: flex;
+	width: 80%;
 	flex-direction: column;
 	justify-content: center;
+	margin-inline: auto;
 	gap: 2em;
 	align-items: center;
 	width: fit-content;
@@ -53,8 +54,10 @@
 }
 
 .subTxt {
-	font-size: 1.5rem;
+	padding-inline: 8em;
+	text-align: center;
 }
+
 .subTxtB {
 	font-size: 1.5rem;
 	padding-inline: 8em;
