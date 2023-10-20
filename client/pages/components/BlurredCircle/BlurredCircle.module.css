@@ -25,7 +25,7 @@
 		transform: scale(100%) translateX(0%);
 	}
 	50% {
-		transform: scale(150%) translateX(-50%);
+		transform: scale(90%) translateX(-50%);
 	}
 
 	100% {

@@ -22,27 +22,9 @@ export default function RootLayout({
 			<div className={styles.navBarWrapper}>
 				<NavBar />
 			</div>
-			<BlurredCircle
-				color="#EF0600"
-				
-				radius="1004px"
-				top="0"
-				left="10%"
-			/>
-			<BlurredCircle
-				color="#F7A92E"
-				
-				radius="1004px"
-				top="0"
-				left="50%"
-			/>
-			<BlurredCircle
-				color="#65B9DE"
-				
-				radius="1004px"
-				top="50%"
-				left="50%"
-			/>
+			<BlurredCircle color="#EF0600" top="-10%" left="10%" />
+			<BlurredCircle color="#F7A92E" top="-10" left="60%" />
+			<BlurredCircle color="#65B9DE" top="50%" left="50%" />
 			<div className={styles.contentWrapper}>{children}</div>
 		</div>
 	);

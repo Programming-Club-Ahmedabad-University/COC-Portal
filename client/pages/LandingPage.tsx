@@ -12,6 +12,11 @@ function landingPage() {
 		<RootLayout>
 			<div className={styles.wrapper}>
 				<Heading
+					maxWidth={{
+						md: "70%",
+						sm: "100%",
+					}}
+					textAlign={"center"}
 					variant={"shining"}
 					children="Welcome to the ultimate Competitive Programming Extravaganza!"
 				/>
