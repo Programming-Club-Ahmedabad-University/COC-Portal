@@ -69,10 +69,7 @@ function landingPage() {
 
 				{/* card */}
 				<div className={styles.cardB}>
-					<Heading
-						variant={"shining"}
-						children="4 Clans. 16 Teams. 1 Winner."
-					/>
+					<Heading variant={"shining"}>4 Clans. 16 Teams. 1 Winner.</Heading>
 
 					<Text>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
