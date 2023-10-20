@@ -22,7 +22,7 @@ function ClanCard({ clan }: { clan: string }) {
 		<div className={classNames(styles.cardMini, styles[getCol({ clan })])}>
 			<div className={styles.cardInfo}>
 				<Heading content={clan} />
-				<Text children="Lorem, ipsum dolor sit amet consectetur adipisicing" />
+				<Text>Lorem, ipsum dolor sit amet consectetur adipisicing</Text>
 			</div>
 			{/* Image */}
 			<div className={styles[`pic${getCol({ clan })}`]}>
