@@ -4,8 +4,8 @@
 	justify-content: center;
 	align-items: center;
 	color: white !important;
-	margin-block: 1.5em;
 }
+
 .longg {
 	width: 100%;
 	display: flex;
@@ -17,7 +17,6 @@
 .txt {
 	font-size: 2rem;
 	font-weight: 600;
-	margin-top: 0.2em;
 }
 
 .divider {
