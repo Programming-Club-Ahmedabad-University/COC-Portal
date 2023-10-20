@@ -17,10 +17,11 @@
 .txt {
 	font-size: 2rem;
 	font-weight: 600;
+	padding-top: 0.1em;
 }
 
 .divider {
-	width: 100%;
+	width: 30em;
 	height: 0.5em;
 	background-color: white;
 	margin-inline: 1em;
