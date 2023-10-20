@@ -1,26 +1,20 @@
-.title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
-}
-
 .tableHeader {
-    display: flex;
-    flex-direction: row;
-    padding: 0 0.5rem;
-    width: 100%;
-    gap: 2.5rem;
+	display: flex;
+	flex-direction: row;
+	padding: 0 0.5rem;
+	width: 100%;
+	gap: 2.5rem;
 }
 
-.tableEntry{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
+.tableEntry {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-between;
 }
 
-.tableWrapper{
-    display: flex;
-    flex-direction: column;
-    width: max-content;
+.tableWrapper {
+	display: flex;
+	flex-direction: column;
+	width: max-content;
 }

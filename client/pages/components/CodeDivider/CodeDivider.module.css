@@ -1,28 +1,16 @@
-.divCont {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	color: white !important;
-}
-
-.longg {
+.wrapper {
 	width: 100%;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-}
-
-.txt {
-	font-size: 2rem;
-	font-weight: 600;
-	padding-top: 0.1em;
+	margin: auto;
+	padding: 1em 0;
 }
 
 .divider {
-	width: 30em;
-	height: 0.5em;
+	width: 25%;
+	height: 4px;
 	background-color: white;
 	margin-inline: 1em;
 }

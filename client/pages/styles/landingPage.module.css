@@ -18,11 +18,6 @@
 	-webkit-text-fill-color: transparent;
 }
 
-.txt {
-	width: fit-content;
-	font-size: small;
-}
-
 .cardA {
 	display: flex;
 	flex-direction: row;
@@ -42,31 +37,16 @@
 	width: fit-content;
 }
 
-.title {
-	font-size: 3rem;
-	font-weight: 500;
-	margin-bottom: 1em;
-}
-.titleB {
-	font-size: 3rem;
-	font-weight: 500;
-	margin-bottom: 0.5em;
-}
-
-.subTxt {
-	padding-inline: 8em;
-	text-align: center;
-}
-
-.subTxtB {
-	font-size: 1.5rem;
-	padding-inline: 8em;
-	text-align: center;
-}
-
 .cardGrid {
 	display: grid;
 	grid-template-columns: repeat(2, 0.75fr);
 	grid-gap: 3em;
 	padding-inline: 4em;
+}
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	max-width: 80%;
 }

@@ -77,9 +77,9 @@ export default function NavBar() {
 		<div className={styles.mainNav}>
 			{/* top */}
 			<div className={styles.navTop}>
-				<Button>Home</Button>
-				<Button>Standings</Button>
-				<Button>Live</Button>
+				<button>Home</button>
+				<button>Standings</button>
+				<button>Live</button>
 			</div>
 
 			{/* mid */}
@@ -90,8 +90,8 @@ export default function NavBar() {
 			{/* bottom */}
 			<div className={styles.navEnd}>
 				{/* profile pic: */}
-				<Button>Battles</Button>
-				<Button>Players</Button>
+				<button>Battles</button>
+				<button>Players</button>
 				<div>{authBtn}</div>
 			</div>
 		</div>

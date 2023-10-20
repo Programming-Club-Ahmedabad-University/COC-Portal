@@ -1,31 +1,34 @@
 import React from "react";
 import RootLayout from "./Layout";
-import styles from "./styles/landingPage.module.css";
-
+import styles from "./styles/LandingPage.module.css";
+import { Text } from "@chakra-ui/react";
 import CodeDivider from "./components/CodeDivider/CodeDivider";
 import Image from "next/image";
 import ClanCard from "./components/ClanCard/ClanCard";
-import Title from "./components/Title/Title";
-import SubText from "./components/SubText/SubText";
+import { Heading } from "@chakra-ui/react";
 
 function landingPage() {
 	return (
-		<>
-			<RootLayout>
-				<div className={styles.headLine}>
-					<Title content="Welcome to the ultimate Competitive Programming Extravaganza!" />
-				</div>
+		<RootLayout>
+			<div className={styles.wrapper}>
+				<Heading
+					variant={"shining"}
+					children="Welcome to the ultimate Competitive Programming Extravaganza!"
+				/>
 
 				<CodeDivider />
 
 				{/* card */}
 				<div className={styles.cardA}>
-					<Image src="/images/barb.png" alt="barb" width={600} height={500} />
+					<Image src="/images/barb.png" alt="barb" width={400} height={300} />
 					<div className={styles.txt}>
-						<Title content="Lorem, ipsum dolor sit amet consectetur" />
+						<Heading
+							children="Lorem, ipsum dolor sit amet consectetur"
+							variant={"shining"}
+						/>
 						<div>
-							<SubText
-								content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+							<Text
+								children="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 								eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci
 								nulla pellentesque dignissim enim sit amet venenatis urna
 								cursus. Morbi tristique senectus et netus et malesuada fames."
@@ -41,15 +44,15 @@ function landingPage() {
 					<Image
 						src="/images/builder.png"
 						alt="build"
-						width={900}
-						height={521}
+						width={500}
+						height={221}
 					/>
 					<div className={styles.txt}>
-						<Title content="COC Auction is Live Now!" />
+						<Heading children="COC Auction is Live Now!" />
 					</div>
 					<div className={styles.subTxt}>
-						<SubText
-							content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+						<Text
+							children="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 						eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci
 						nulla pellentesque dignissim enim sit amet venenatis urna cursus.
 						Morbi tristique senectus et netus et malesuada fames."
@@ -61,11 +64,12 @@ function landingPage() {
 
 				{/* card */}
 				<div className={styles.cardB}>
-					<div className={styles.headLine}>
-						<Title content="4 Clans. 16 Teams. 1 Winner." />
-					</div>
+					<Heading
+						variant={"shining"}
+						children="4 Clans. 16 Teams. 1 Winner."
+					/>
 
-					<SubText content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
+					<Text children="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " />
 
 					<div className={styles.cardGrid}>
 						<ClanCard clan="Wizards" />
@@ -74,14 +78,14 @@ function landingPage() {
 						<ClanCard clan="Giants" />
 					</div>
 
-					<div className={styles.subTxtB}>
+					<Text>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 						eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci
 						nulla pellentesque
-					</div>
+					</Text>
 				</div>
-			</RootLayout>
-		</>
+			</div>
+		</RootLayout>
 	);
 }
 

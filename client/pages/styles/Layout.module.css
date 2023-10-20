@@ -2,11 +2,13 @@
 	position: sticky;
 	top: 0;
 	width: 100%;
-	z-index: 100;
+	z-index: 10;
 	display: flex;
 	justify-content: center;
 }
 
 .contentWrapper {
-	margin: 0.5em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }

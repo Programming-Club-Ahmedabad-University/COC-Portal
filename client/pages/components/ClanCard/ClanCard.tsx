@@ -2,9 +2,7 @@ import React from "react";
 import styles from "./ClanCard.module.css";
 import Image from "next/image";
 import classNames from "classnames";
-
-import Title from "../Title/Title";
-import InfoText from "../InfoText/InfoText";
+import { Heading, Text } from "@chakra-ui/react";
 
 function ClanCard({ clan }: { clan: string }) {
 	function getCol({ clan }: { clan: string }): string {
@@ -23,16 +21,16 @@ function ClanCard({ clan }: { clan: string }) {
 	return (
 		<div className={classNames(styles.cardMini, styles[getCol({ clan })])}>
 			<div className={styles.cardInfo}>
-				<Title content={clan} />
-				<InfoText content="Lorem, ipsum dolor sit amet consectetur adipisicing" />
+				<Heading content={clan} />
+				<Text children="Lorem, ipsum dolor sit amet consectetur adipisicing" />
 			</div>
 			{/* Image */}
 			<div className={styles[`pic${getCol({ clan })}`]}>
 				<Image
 					src={`/images/troops/${getCol({ clan })}.png`}
 					alt={clan}
-					width={251}
-					height={251}
+					width={151}
+					height={151}
 				/>
 			</div>
 		</div>

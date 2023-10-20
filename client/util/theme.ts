@@ -35,12 +35,26 @@ const Button = defineStyleConfig({
 	// The default size and variant values
 });
 
-const MenuList = defineStyleConfig({
-	// The styles all button have in common
+const Heading = defineStyleConfig({
 	baseStyle: {
-		backgroundColor: "red",
-		minWidth: "100px",
-		padding: "2em",
+		fontFamily: "Clash fonts",
+	},
+	variants: {
+		shining: {
+			background:
+				"linear-gradient(90deg, #D7A768, #FFF4B4, #F2AE3A, #FFF1BE, #F7A92E)",
+			backgroundClip: "text",
+		},
+	},
+	defaultProps: {
+		size: "lg",
+	},
+});
+const Text = defineStyleConfig({
+	baseStyle: {
+		fontSize: "ex",
+		color: "#EBEBEB",
+		fontFamily: "Clash fonts",
 	},
 });
 
@@ -57,7 +71,8 @@ const theme = extendTheme({
 	},
 	components: {
 		Button,
-		MenuList,
+		Heading,
+		Text,
 	},
 	colors,
 });
