@@ -4,7 +4,6 @@ import Image from "next/image";
 import classNames from "classnames";
 
 import Title from "../Title/Title";
-import SubText from "../SubText/SubText";
 import InfoText from "../InfoText/InfoText";
 
 function ClanCard({ clan }: { clan: string }) {
@@ -32,8 +31,8 @@ function ClanCard({ clan }: { clan: string }) {
 				<Image
 					src={`/images/troops/${getCol({ clan })}.png`}
 					alt={clan}
-					width={403}
-					height={508}
+					width={251}
+					height={251}
 				/>
 			</div>
 		</div>

@@ -4,7 +4,6 @@
 	justify-content: space-between;
 	width: fit-content;
 	border-radius: 1em;
-	height: 70%;
 }
 
 .w {
@@ -41,17 +40,4 @@
 	flex-direction: column;
 	padding-left: 1.5em;
 	justify-content: space-around;
-}
-
-.pic .w {
-	bottom: -5em;
-}
-.pic .g {
-	bottom: -5em;
-}
-.pic .p {
-	bottom: -5em;
-}
-.pic .b {
-	bottom: -5em;
 }
