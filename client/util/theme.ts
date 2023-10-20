@@ -49,7 +49,7 @@ const theme = extendTheme({
 		global: {
 			// styles for the `body`
 			body: {
-				bg: "#3030300f",
+				bg: "#303030",
 
 				color: getColor("text"),
 			},
