@@ -1,0 +1,9 @@
+.btnGroup{
+    display: inline-block;
+}
+
+.back{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}

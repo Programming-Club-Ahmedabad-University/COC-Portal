@@ -34,6 +34,10 @@ export default function NavBar() {
 			name:"Clans",
 			link:"/clan/clans",
 		},
+		{
+			name:"Auction",
+			link:"/auction/auction-form",
+		}
 	];
 
 	if (session && session.user) {
